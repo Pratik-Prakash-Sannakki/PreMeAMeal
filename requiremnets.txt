@@ -1,0 +1,10 @@
+neo4j
+langchain
+langchain-openai
+langgraph
+langgraph-supervisor
+openai
+tiktoken
+tavily-python
+langchain_anthropic
+streamlit 
