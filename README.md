@@ -34,8 +34,8 @@ This project is a modular, multi-agent system designed for intelligent knowledge
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
-cd <repo-name>
+git clone https://github.com/Pratik-Prakash-Sannakki/PreMeAMeal.git
+cd PreMeAMeal
 ```
 
 ### 2. Create and Activate Virtual Environment
