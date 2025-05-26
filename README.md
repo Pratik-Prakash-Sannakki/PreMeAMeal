@@ -20,6 +20,9 @@ Designed with **innovation and efficiency** in mind, this multi-agent system com
 
 ## 🚀 Key Features
 
+![1_BpvaOnSsxW3aeUoPuYz8NQ](https://github.com/user-attachments/assets/c4f98036-42cf-4b1e-a37f-b4dbfe5f4b3e)
+
+
 * **Smart Meal Planning**: 2 brand new meals sourced online + 5 meals recycled from the knowledge graph (ensuring nothing is repeated within 2 weeks).
 * **Ingredient Optimization**: Consolidates ingredients across meals and intelligently swaps based on availability & cost.
 * **Balanced Nutrition**: Focuses on healthy, diverse, and cuisine-specific meals.
@@ -28,6 +31,9 @@ Designed with **innovation and efficiency** in mind, this multi-agent system com
 ---
 
 ## 🤖 Multi-Agent Architecture
+
+![1_tTDRhd-ByDJuygUSZC6Zzw](https://github.com/user-attachments/assets/175d0c44-b6bc-4de5-b3df-05baa8a21edd)
+
 
 ### 1. 📏 Top-Level Supervisor
 
