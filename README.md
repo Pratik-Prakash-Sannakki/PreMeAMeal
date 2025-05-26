@@ -1,45 +1,91 @@
+# 🧠 Multi-Agent AI System for Smart Meal Planning & Knowledge Retrieval
 
-# 🧠 Multi-Agent AI System for Knowledge Retrieval
+**💡 Ever gone to Trader Joe’s with a list and still forgot the essentials? 🫦**
 
-**💡 Ever been to Trader Joe’s with a grocery list and left with everything BUT what you needed? 🤦‍♂️**
-I’ve been there! Meal prepping was always a struggle for me, most of the time I don't really know what to cook and the days I do– I’d buy a ton of stuff I didn’t need, forget essential ingredients, and then end up skipping meals because I didn't end up cooking. The worst part? Ingredients can get really expensive, especially when I end up at Trader Joe’s with a cart full of random items. Sound familiar?
+Same here! Meal prepping was always chaotic—I didn’t know what to cook, bought the wrong things, overspent, and skipped meals. Ingredients pile up. Plans fall apart. Sound familiar?
 
+So I built a smarter way.
 
-It creates a weekly meal prep plan, 7 dishes a week(Indian, Thai, Italian) with cooking instructions, optimizes my ingredients requirements( efficinet swaping ingredients still keeping dishes tasting the same), gives out a list of what I actually need, and keeps my meals balanced, nutritious, and cost-effective. 🥑🍗🍅✨
+> This AI-powered app generates **7 balanced dishes per week** (Indian, Thai, Italian), optimizes ingredients (smart swaps that preserve flavor), and produces a consolidated, efficient grocery list. It keeps nutrition, taste, and cost-efficiency in perfect balance. 🥑🍗🍅
 
+Designed with **innovation and efficiency** in mind, this multi-agent system combines LLM reasoning with graph-based memory to deliver practical meal plans tailored weekly.
 
 ---
 
-## 📽️ Demo
+## 🎩 Demo
 
-[Watch the system in action on LinkedIn](https://www.linkedin.com/posts/pratik-p-sannakki_ai-aiagents-knowledgegraphs-activity-7308016472235065344-6Uiy?utm_source=share&utm_medium=member_desktop&rcm=ACoAACvBdFoBPiT2d6ACNp294Lgy4GFR0i8fyrA)
-
+[Watch on LinkedIn](https://www.linkedin.com/posts/pratik-p-sannakki_ai-aiagents-knowledgegraphs-activity-7308016472235065344-6Uiy?utm_source=share&utm_medium=member_desktop)
 
 ---
 
 ## 🚀 Key Features
 
-
-This project is a modular, multi-agent system designed for intelligent knowledge retrieval and reasoning using LLMs and vector databases. Built with LangGraph, LangChain, and Streamlit, the system orchestrates agents and supervisors to collaboratively solve complex tasks with chain-of-thought decomposition, search, and tool usage.
-
-- **Multi-Agent Architecture**: Modular agent design (via `agents.py`) with distinct roles, like planner, retriever, and solver.
-- **Supervisor Graph**: Manages agent workflows using `langgraph-supervisor` (in `supervisors.py`) to ensure traceable, goal-directed execution.
-- **Tool Integration**: Integrates tools like web search (`tavily`) and Neo4j graph queries (`tools.py`) to enhance agent capabilities.
-- **Streamlit Frontend**: Lightweight, interactive UI (`app.py`) for prompting the agent team and viewing results.
-- **Configurable & Extensible**: Uses `config.json` for credentials and is easy to expand with more tools or agent roles.
+* **Smart Meal Planning**: 2 brand new meals sourced online + 5 meals recycled from the knowledge graph (ensuring nothing is repeated within 2 weeks).
+* **Ingredient Optimization**: Consolidates ingredients across meals and intelligently swaps based on availability & cost.
+* **Balanced Nutrition**: Focuses on healthy, diverse, and cuisine-specific meals.
+* **Persistent Knowledge**: Meals and ingredients are stored in a Neo4j graph for traceable recommendations.
 
 ---
 
-## 📁 Project Structure
+## 🤖 Multi-Agent Architecture
+
+### 1. 📏 Top-Level Supervisor
+
+Coordinates the entire system.
+
+* **Role**: Oversees meal retrieval, generation, optimization, and storage.
+* **Supervises**: All subsystem supervisors.
+
+### 2. 🚧 Workflow Supervisors
+
+Each manages one core pipeline component:
+
+* **Meal Checker Supervisor**
+
+  * Retrieves meals not used in the last 2 weeks.
+
+* **Meal Generator Supervisor**
+
+  * Uses search + LLM to create vegetarian dishes.
+
+* **Meal Optimization Supervisor**
+
+  * Swaps, deduplicates, and balances ingredients.
+
+* **Meal Pusher Supervisor**
+
+  * Stores final plans in Neo4j graph DB.
+
+### 3. 🧹 Specialized Agents
+
+Agents handle core tasks with tool support:
+
+* **Meal Checker Agent**: Uses `get_and_update_old_meals`
+* **Personal Chef Agent**: Uses `TavilySearchResults` for external meal ideas
+* **Meal Optimizer Agent**: Uses `optimize_ingredients_tool`
+* **Meal Pusher Agent**: Uses `create_meal_graph` and `update_db`
+
+### 4. ⚖️ Tools & Utilities
+
+Plug-and-play tools power the agents:
+
+* `get_and_update_old_meals`: Filters past meals
+* `TavilySearchResults`: Searches new meal ideas
+* `optimize_ingredients_tool`: Smart ingredient minimizer
+* `create_meal_graph` & `update_db`: Structure and persist meals in Neo4j
+
+---
+
+## 📂 Project Structure
 
 ```bash
 .
-├── agents.py            # Defines individual LangChain agents (retriever, solver, planner, etc.)
-├── supervisors.py       # LangGraph supervisor and graph logic for orchestrating agent workflows
-├── tools.py             # Utility tools used by agents (Neo4j, Tavily, etc.)
-├── app.py               # Streamlit app for running queries through the system
-├── config.json          # Configuration for API keys and service credentials
-├── requiremnets.txt     # Required Python packages
+├── agents.py            # Agent roles and behaviors
+├── supervisors.py       # LangGraph supervisors for agent workflows
+├── tools.py             # Tools for data access, search, optimization
+├── app.py               # Streamlit UI
+├── config.json          # API keys & DB credentials
+├── requirements.txt     # Python package dependencies
 ```
 
 ---
@@ -53,22 +99,20 @@ git clone <your-repo-url>
 cd <repo-name>
 ```
 
-### 2. Create and Activate Virtual Environment
+### 2. Set Up Virtual Environment
 
 ```bash
 python -m venv env
-source env/bin/activate  # or .\env\Scripts\activate on Windows
+source env/bin/activate  # On Windows: .\env\Scripts\activate
 ```
 
-### 3. Install Requirements
+### 3. Install Dependencies
 
 ```bash
-pip install -r requiremnets.txt
+pip install -r requirements.txt
 ```
 
-### 4. Configure Credentials
-
-Edit `config.json` with your actual API keys and Neo4j credentials:
+### 4. Configure `config.json`
 
 ```json
 {
@@ -85,48 +129,42 @@ Edit `config.json` with your actual API keys and Neo4j credentials:
 
 ---
 
-## 🧪 How to Use
-
-### Launch the App:
+## 🔮 How to Use
 
 ```bash
 streamlit run app.py
 ```
 
-1. Enter a question or prompt into the UI.
-2. The system triggers a reasoning pipeline with agents collaborating via LangGraph.
-3. Outputs are shown along with agent traces and intermediate reasoning steps.
+1. Input your question or click "Generate Weekly Plan"
+2. Agents collaborate using LangGraph to plan, optimize, and store
+3. Review meal suggestions, ingredient list, and trace decisions
 
 ---
 
-## 📌 Dependencies
+## 📊 Core Dependencies
 
-See `requiremnets.txt` for full list. Core libraries include:
-
-- `langchain`, `langchain-openai`, `langchain_anthropic`
-- `langgraph`, `langgraph-supervisor`
-- `streamlit`
-- `neo4j`, `tavily-python`, `tiktoken`
+* `langchain`, `langchain-anthropic`, `langgraph`
+* `streamlit`, `neo4j`, `tavily-python`
+* `tiktoken`, `pydantic`, `dotenv`
 
 ---
 
-## 🔧 Customization Tips
+## 🔧 Customization
 
-- **Add new agents** in `agents.py` with specific goals (e.g., summarizer, ranker).
-- **Extend the graph** in `supervisors.py` to include conditional branching or retry logic.
-- **Plug in tools** via `tools.py` (e.g., database lookups, file readers, APIs).
-- **Log and trace** agent decisions with `LANGSMITH_API_KEY`.
-
----
-
-
-## 👨‍💻 Author
-
-**Pratik Sannakki**  
-_Data Scientist passionate about building modular, intelligent LLM applications._
+* Add new agent types in `agents.py` (e.g. NutritionistAgent)
+* Expand LangGraph logic in `supervisors.py`
+* Add new tools in `tools.py`
+* Log and trace performance using LangSmith
 
 ---
 
-## 📜 License
+## 👨‍💼 Author
 
-MIT License (or specify if different)
+**Pratik Sannakki**
+*Data Scientist passionate about building intelligent, modular AI systems.*
+
+---
+
+## 📚 License
+
+MIT License
