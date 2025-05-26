@@ -161,6 +161,7 @@ streamlit run app.py
 ## 👨‍💼 Author
 
 **Pratik Sannakki**
+
 *Data Scientist passionate about building intelligent, modular AI systems.*
 
 ---
