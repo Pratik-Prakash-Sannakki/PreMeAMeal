@@ -4,13 +4,9 @@
 **💡 Ever been to Trader Joe’s with a grocery list and left with everything BUT what you needed? 🤦‍♂️**
 I’ve been there! Meal prepping was always a struggle for me, most of the time I don't really know what to cook and the days I do– I’d buy a ton of stuff I didn’t need, forget essential ingredients, and then end up skipping meals because I didn't end up cooking. The worst part? Ingredients can get really expensive, especially when I end up at Trader Joe’s with a cart full of random items. Sound familiar?
 
-So, I built PrepMeAMeal – an app that does the heavy lifting 
 
-It creates a weekly meal prep plan, 7 dishes a week(Indian, Thai, Italian) with cooking instructions, optimizes my ingredients requirements(swaps out ingredients), gives out a list of what I actually need, and keeps my meals balanced, nutritious, and cost-effective. 🥑🍗🍅✨
+It creates a weekly meal prep plan, 7 dishes a week(Indian, Thai, Italian) with cooking instructions, optimizes my ingredients requirements( efficinet swaping ingredients still keeping dishes tasting the same), gives out a list of what I actually need, and keeps my meals balanced, nutritious, and cost-effective. 🥑🍗🍅✨
 
-No more impulse buys, no more missing ingredients, no more skipped meals, and no more overspending at the store. With PrepMeAMeal, meal prep just got smarter – and more affordable! 🎉
-
-This project is a modular, multi-agent system designed for intelligent knowledge retrieval and reasoning using LLMs and vector databases. Built with LangGraph, LangChain, and Streamlit, the system orchestrates agents and supervisors to collaboratively solve complex tasks with chain-of-thought decomposition, search, and tool usage.
 
 ---
 
@@ -22,6 +18,9 @@ This project is a modular, multi-agent system designed for intelligent knowledge
 ---
 
 ## 🚀 Key Features
+
+
+This project is a modular, multi-agent system designed for intelligent knowledge retrieval and reasoning using LLMs and vector databases. Built with LangGraph, LangChain, and Streamlit, the system orchestrates agents and supervisors to collaboratively solve complex tasks with chain-of-thought decomposition, search, and tool usage.
 
 - **Multi-Agent Architecture**: Modular agent design (via `agents.py`) with distinct roles, like planner, retriever, and solver.
 - **Supervisor Graph**: Manages agent workflows using `langgraph-supervisor` (in `supervisors.py`) to ensure traceable, goal-directed execution.
