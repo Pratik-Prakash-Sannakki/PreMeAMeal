@@ -1,7 +1,23 @@
 
-# 🧠 Multi-Agent AI System for Meal Prep :)
+# 🧠 Multi-Agent AI System for Knowledge Retrieval
+
+**💡 Ever been to Trader Joe’s with a grocery list and left with everything BUT what you needed? 🤦‍♂️**
+I’ve been there! Meal prepping was always a struggle for me, most of the time I don't really know what to cook and the days I do– I’d buy a ton of stuff I didn’t need, forget essential ingredients, and then end up skipping meals because I didn't end up cooking. The worst part? Ingredients can get really expensive, especially when I end up at Trader Joe’s with a cart full of random items. Sound familiar?
+
+So, I built PrepMeAMeal – an app that does the heavy lifting 
+
+It creates a weekly meal prep plan, 7 dishes a week(Indian, Thai, Italian) with cooking instructions, optimizes my ingredients requirements(swaps out ingredients), gives out a list of what I actually need, and keeps my meals balanced, nutritious, and cost-effective. 🥑🍗🍅✨
+
+No more impulse buys, no more missing ingredients, no more skipped meals, and no more overspending at the store. With PrepMeAMeal, meal prep just got smarter – and more affordable! 🎉
 
 This project is a modular, multi-agent system designed for intelligent knowledge retrieval and reasoning using LLMs and vector databases. Built with LangGraph, LangChain, and Streamlit, the system orchestrates agents and supervisors to collaboratively solve complex tasks with chain-of-thought decomposition, search, and tool usage.
+
+---
+
+## 📽️ Demo
+
+[Watch the system in action on LinkedIn](https://www.linkedin.com/posts/pratik-p-sannakki_ai-aiagents-knowledgegraphs-activity-7308016472235065344-6Uiy?utm_source=share&utm_medium=member_desktop&rcm=ACoAACvBdFoBPiT2d6ACNp294Lgy4GFR0i8fyrA)
+
 
 ---
 
@@ -34,8 +50,8 @@ This project is a modular, multi-agent system designed for intelligent knowledge
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Pratik-Prakash-Sannakki/PreMeAMeal.git
-cd PreMeAMeal
+git clone <your-repo-url>
+cd <repo-name>
 ```
 
 ### 2. Create and Activate Virtual Environment
@@ -104,6 +120,7 @@ See `requiremnets.txt` for full list. Core libraries include:
 
 ---
 
+
 ## 👨‍💻 Author
 
 **Pratik Sannakki**  
@@ -114,4 +131,3 @@ _Data Scientist passionate about building modular, intelligent LLM applications.
 ## 📜 License
 
 MIT License (or specify if different)
-
