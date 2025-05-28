@@ -16,6 +16,9 @@ Designed with **innovation and efficiency** in mind, this multi-agent system com
 
 [Watch on LinkedIn](https://www.linkedin.com/posts/pratik-p-sannakki_ai-aiagents-knowledgegraphs-activity-7308016472235065344-6Uiy?utm_source=share&utm_medium=member_desktop)
 
+Article - https://medium.com/@pratikpsannakki1/automating-meal-planning-with-ai-ai-agents-a92ca76d5cfb
+
+
 ---
 
 ## 🚀 Key Features
